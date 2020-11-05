@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  margin: 0 0 0 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #1a1a1a;
+}
+
+h1 {
+  font-size: 200px;
+  text-align: left;
+  font-family: 'Anton', sans-serif;
+  color: white;
+  letter-spacing: 5px;
+  font-weight: normal;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.homeWrapper {
+  display: flex;
+  width: 60vw;
+  flex-direction: column;
+  place-items: center;
+
+  
+}
+
+.homeWrapper h2 {
+  text-align: left; 
+}
+
+
+
+#head {
+  border-radius: 10px;
+  transition: 1s;
+
+}
+
+
+.navBar {
+  position: fixed;
+  width: 100vw;
+  height: 75px;
+  z-index: 20;
+/*   background-color: rgba(242, 242, 242, 0);
+ */  display: flex;
+  align-items: center;  
+  justify-content: flex-start;
+  flex-direction: row;
+/*   box-shadow: 0px 0px 25px #5e60ce;
+ */}
+
+#scitechLogo {
+  padding: 10px 15px 15px 15px;
+  display: flex;
+  cursor: pointer;
+  height: 40px;
+}
+
+.aboutScreenWrapper {
+  text-align: center;
+
+}
+
+.video {
+  height: auto;
+  width: 100%;
+  filter: opacity(20%);
+  position: fixed;
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  left: 0%;
+  pointer-events: none;
+}
+
+#aboutScreen {
+  height: 70vh;
+  width: 60vw;
+  background-color: red;
+  color: white;
+  display: inline-block;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+button:focus {
+  outline: none;
+}
+
+.buttons button {
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  font-weight: bold;
+  padding: 0px 25px 10px 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-style: none;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+@keyframes downArrowAnim {
+  0% {
+    transform: translateY(0%)
+  }
+  100% {
+    transform: translateY(10%)
+  }
+}
+
+.down-arrow-wrapper {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 80vh;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  animation: downArrowAnim 1s ease-in-out infinite alternate; 
+}
+
+.buttons button:hover {
+  border-bottom: 2px solid #80ffdb;
+}
+
+@keyframes textColour {
+  0% {
+    filter: drop-shadow(0 0 0.75rem #7400b8); 
+  }
+  25% {
+    filter: drop-shadow(0 0 0.75rem #5390d9); 
+  }
+  50% {
+    filter: drop-shadow(0 0 0.75rem #64dfdf); 
+  }
+  75% {
+    filter: drop-shadow(0 0 0.75rem #80ffdb); 
+  }
+  100% {
+    filter: drop-shadow(0 0 0.75rem #7400b8); 
+  }
+}
+
+.title-text {
+  filter: drop-shadow(0 0 0.75rem black);
+  animation: textColour 5s linear infinite;
+  display: flex;
+  width: 100%;
+}
+
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes optionsEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.options {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+  background-size: 200%;
+  animation: optionsEntrance 1s;
+  color: white;
+  width: 350px;
+  padding: 10px 10px 10px 10px;
+  margin: 15px auto;
+  transition: 0.3s;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.options p {
+}
+
+
+
+.options:hover {
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+  background-position: right center;
+}
+
+.options:focus {
+  background-color: #5e60ce;
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
+}
+
+#cardContainer {
+  transform: translateY(45%);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border-radius: 25px;
+  width: 60%;
+  height: 500px;
+  text-align: center;
+  display: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #0093E9;
+  box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+
+}
+
+
+
+.cardCenter {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+  text-align: center;
+  display: none;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+#optionsContainer2, #optionsContainer3, #optionsContainer4, #optionsContainer5 {
+  display: none;
+}
+
+#textContainer {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+hr {
+  color: white;
+  outline: none;
+  border: none;
+  height: 1px;
+  background-color: #fff;
+  width: 80%;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+#nextQuestion {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+  transition: 0.2s;
+}
+
+#nextQuestion:hover {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+  color: white;
+}
+
+#finishQuizButton {
+  border: none;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: none;
+
+
+}
+
+#finishQuizButton:hover {
+  color: white;
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+  }
+
+
+#homeContainer {
+  color: #232323;
+  text-align: center;
+  margin-top: 0px;
+}
+
+#homeContainer h1 {
+  margin-top: 0px;
+
+}
+
+.bodyText p {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bodyText {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+#imageWrapper {
+  text-align: center;
+  display: inline-block;
+}
+
+#boxContainer {
+  width: 600px;
+  height: 300px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 1em #7400b8 inset;
+  border-radius: 25px;
+}
+
+#canvasContainer {
+  display: none;
+  height: auto;
+  position: absolute;
+  right: 2%;
+  margin-top: 100px;
+  pointer-events: none;
+}
+
+.button-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+#canvasCentre {
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+
+  width: 100%;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  height: 100vh;
+}
+
+#laserGraphic1 {
+  width: 40%;
+  height: auto;
+  text-align: center;
+  transition: 1s;
+}
+.text-wrapper {
+  padding: 0px 20vw 0px;
+  text-align: center;
+}
+
+#laserGraphic1:hover {
+  width: 58%;
+}
+
+.slide-one-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#slideOne {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#slideTwo {
+  display: none;
+  flex-direction: column;
+  margin-top: 160px;
+}
+
+#slideThree {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 160px;
+  
+
+}
+
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-left: 50px solid #555;
+	border-bottom: 25px solid transparent;
+  float: right;
+  padding-left: 8px;
+  transition: 0.5s;
+  cursor: pointer;
+  bottom: 10px;
+
+}
+
+.triangle-right:hover, .triangle-right-two:hover {
+  border-left: 50px solid red;
+}
+
+.triangle-right-two {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid #555;
+  border-bottom: 25px solid transparent;
+  float: right;
+  padding-left: 8px;
+  transition: 0.5s;
+  cursor: pointer;
+  display: none;
+  bottom: 10px;
+
+}
+
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #555;
+	border-bottom: 25px solid transparent;
+  float: left;
+  cursor: pointer;
+  padding-right: 8px;
+  display: none;
+  transition: 0.5s;
+  bottom: 10px;
+
+}
+
+.triangle-left-two {
+	width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #555;
+	border-bottom: 25px solid transparent;
+  float: left;
+  cursor: pointer;
+  padding-right: 8px;
+  display: none;
+  transition: 0.5s;
+  bottom: 10px;
+
+}
+
+.triangle-left:hover, .triangle-left-two:hover {
+  border-right: 50px solid #bcf442;
+}
+
+.triangle-right:hover, .triangle-right-two:hover {
+  border-left: 50px solid #bcf442;
+}
+
+
+.mainTitle {
+  display: flex;
+  text-align: center;
+  z-index: 1;
+  opacity: 70%;
+}
+
+ul {
+  list-style-type: disc;
+  color: white;
+}
+
+#listHolder1, #listHolder2 {
+  width: 20%;
+  height: auto;
+  display: inline-block;
+  list-style-type: disc;
+  text-align: left;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin: 10px 10px 10px 10px;
+  line-height: 2;
+}
+
+#laserCutter {
+  width: 30%;
+  height: auto;
+  display: inline-block;
+}
+
+.imgSpecs {
+  max-width: 10%;
+  height: auto;
+  display: inline-block;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  z-index: 100;
+}
+
+#mute {
+  width: 3%;
+  height: auto;
+  cursor: pointer;
+  position: absolute;
+  float: left;
+  display: block;
+}
+
+#unmute {
+  width: 3%;
+  height: auto;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  float: left;
+}
+
+.modal {
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    float: left;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; 
+    color: black;
+}
+
+.modal-content h2 {
+  color: black;
+  margin-top: 0px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+
+.close:hover,
+.close:focus {
+    color: #80ffdb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #eff5ff;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 500px;
+    height: 300px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    position: absolute;
+    float: left;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 30%; opacity: 1}
+}
+
+#textPanelLeft {
+  float: left;
+  width: 300px;
+  height: 550px;
+  background-color: light-grey;
+  text-align: left;
+  display: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1rem;
+  padding: 15px 20px 15px;
+  line-height: 1.8;
+  background-color: #e5e3e3;
+  margin-top: 150px;
+  margin-left: 15px;
+  border-radius: 25px;
+}
+
+.canvas-control {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  display: inline-block;
+  background-color: #56cfe1 ;
+  padding: 10px 25px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border-style: none;
+  margin-bottom: 10px;
+  transition: 0.2s;
+  border: 4px solid transparent;
+}
+
+.canvas-control:hover {
+  background-color: #7400b8;
+  border: 4px solid #56cfe1;
+  color: white;
+}
+
+#restartQuizMain {
+  display: none;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  color: black;
+}
+
+#restartQuizMain:hover {
+  color: white;
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);  
+
+}
+
+.quizButtons {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  background-color: #6930c3;
+  color: white;
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+  border-style: none;
+  cursor: pointer;
+  margin: 5px 5px 5px 5px;
+  transition: 0.4s;
+}
+
+.quizButtons:hover {
+  background-color: #5e60ce;
+}
+
+
+#textRight {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  left: 0px;
+  position: absolute;
+  width: 20%;
+  display: none;
+  text-align: left;
+  padding: 0px 25px 0px 25px;
+  background-color: #e5e3e3;
+}
+.w3-animate-bottom p{position:relative;animation:animatebottom 1.4s;}@keyframes animatebottom{from{bottom:-100px;opacity:0} to{bottom:0;opacity:1}}
+
+.w3-animate-bottom img{position:relative;animation:animatebottom 1s;}@keyframes animatebottom{from{bottom:-100px;opacity:0} to{bottom:0;opacity:1}}
+
+.w3-animate-bottom h2{position:relative;animation:animatebottom 1.2s;}@keyframes animatebottom{from{bottom:-100px;opacity:0} to{bottom:0;opacity:1}}
+
+.w3-animate-opacity{animation:opac 1.2s}@keyframes opac{from{opacity:0} to{opacity:1}}
+
+.w3-animate-left{position:relative;animation:animateleft 1.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+
+.w3-animate-right{position:relative;animation:animateright 1.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}

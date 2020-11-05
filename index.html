@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lasers</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6b3561d7c5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navBar">
+      <div id="head">
+        <img id="scitechLogo" src="images/logo.png" alt="Scitech">
+      </div>
+      <div class="buttons">
+        <button id="aboutButton">Learn About Lasers</button>
+        <button id="startButton">Start the Experiment</button>
+        <button id="quizButton">Start the Quiz</button>
+      </div>
+    </div>
+
+    <div id="canvasCentre">
+      <div id="textPanelLeft">
+        <div class="control-buttons-container">
+        <button class="canvas-control" id="randomise1" onclick="randomise()">Randomise Shapes</button>
+        <br>
+        <button class="canvas-control" id="randomise2" onclick="randomiseLaser()">Randomise Laser</button>
+      </div>
+        <p>An example of an advanced machine using lasers is a smart-laser tracking device.</p>
+          <p>These are able to track different shapes, bounce off them or trace around them.</p>
+          <p>They have many uses in the real world, such as in advanced motion tracking and mapping.</p>
+          <br>
+          <p><b>Try playing around with the buttons above and see what you can make the laser do.</b></p>
+      </div>
+      <div id="canvasContainer">
+        <canvas id="boxContainer">
+        </canvas>
+      </div>
+      
+    </div>
+
+    
+    <div id="homeContainer" class="w3-animate-bottom">
+      <div id="slideOne" class="w3-animate-opacity">
+      <video width="100%" height="100%" autoplay muted class="video">
+            <source src="videos/shorter.mp4">
+          </video>
+        <div class="slide-one-wrapper">
+          <div id="mainTitle" class="mainTitle">
+            <h1 class="w3-animate-opacity title-text">Light and Lasers</h1>
+          </div>    
+          <div class="homeWrapper">
+            <a href="#about"></a>
+            <h2>What is a Laser?</h2>
+            <p class="bodyText"><b>Laser</b> is an acronym for <i>light amplification by stimulated emission of radiation.</i></p>
+            <p class="bodyText">A laser beam is created when electrons within atoms in special gases absorb energy from an electrical current. When these electrons return to their normal state, they emit photons which create light. These photons are all the same wavelength, making them <b>coherent</b> or in other words <b>the same colour</b>.
+          </div>
+        </div>
+      </div>
+      <div id="slideTwo">
+        <div id="imageWrapper">
+          <img src="images/laserDiagram.png" id="laserGraphic1" class="w3-animate-bottom" alt="Diagram of laser internals">
+        </div>
+          <div class="text-wrapper">
+            <h2>What Makes a Laser?</h2>
+            <p class="bodyText">Lasers are made up of many small components which work together to produce light.</p>
+            <p class="bodyText">A high-voltage electric supply makes a lamp flash on and off.  Every flash releases photons into the ruby crystal.
+                Atoms inside the ruby crystal absorb the energy through their electrons, which rapidly absorb and release the photons, creating light.
+            These photons fly around the ruby crystal at the speed of light and stimulate already energised atoms, producing a second photon of light.
+            The mirror at the end of the tube keeps the photons bouncing around inside the crystal, whilst the partial mirror bounces only some photons back and lets other escape.
+            The escaping photons form a <b>powerful laser beam</b>.</p>
+          </div>
+      </div>
+      <div id="slideThree">
+        <div class="w3-animate-left" id="laserCutter">
+          <img src="images/laserCutter.jpg" class="w3-animate-left" class="imgSpecs" width="100%" height="auto" alt="a laser cutter">
+        </div>
+        <div class="w3-animate-bottom" id="laserCutter">
+          <img src="images/dvdDrive.jpg" class="w3-animate-bottom" class="imgSpecs" width="100%" height="auto" alt="a computer DVD drive">
+        </div>
+        <div class="w3-animate-right" id="laserCutter">
+          <img src="images/laserTelescope.jpg" class="w3-animate-right" class="imgSpecs" width="100%" height="auto" alt="a telescope with a laser">
+        </div>
+        <h2>What Can We Do With Lasers?</h2>
+        <p class="bodyText">Lasers have many uses in our modern world, including:</p>
+        <div id='listHolder1' class="w3-animate-left">
+          <ul>
+            <li>Spectroscopy</li>
+            <li>Astronomy</li>
+            <li>Barcode scanning</li>
+            <li>Nuclear fusion</li>
+          </ul>
+        </div>
+        <div id='listHolder2' class="w3-animate-right">
+          <ul>
+            <li>Surgery</li>
+            <li>Computer mice</li>
+            <li>CD readers</li>
+            <li>Laser tracking and cutting</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="triangle-right"></div>
+        <div class="triangle-right-two"></div>
+        <div class="triangle-left"></div>
+        <div class="triangle-left-two"></div>
+      </div>
+    </div>
+
+
+
+
+    <div class="cardCenter" id="cardCenter">
+      <audio id="soundEffect">
+        <source src="sound/wrongAnswer.ogg" type="audio/mpeg">
+      </audio>
+      <div id='cardContainer'>
+      <img src="images/muteIcon.png" id="mute" onclick="muteAudio()" style="float: left;" alt="mute audio">
+      <img src="images/unmuteIcon.png" id="unmute" onclick="unmuteAudio()" style="float: left" alt="unmute audio">
+
+        <div style="clear:both;"></div>
+      <div class='card'>
+        <div id='contentContainer'>
+          <div id='textContainer'>
+            <p id="questionName">What does laser stand for?</p>
+            <hr>
+          </div>
+          <div id='optionsContainer'>
+            <div class='options' answer='0' onclick="playAudio()"><p>A</p>long amplitude singular energy reaction</div>
+            <div class='options' answer='1'>light amplification by stimulated emission of radiation</div>
+            <div class='options' answer='0' onclick="playAudio()">Low available slow emission of radiation</div>
+            <div class='options' answer='0' onclick="playAudio()">Line arranged solid electron release</div>
+          </div>
+          <div id='optionsContainer2'>
+            <div class='options' answer='0' onclick="playAudio()">1</div>
+            <div class='options' answer='1'>2</div>
+            <div class='options' answer='0' onclick="playAudio()">3</div>
+            <div class='options' answer='0' onclick="playAudio()">4</div>
+          </div>
+          <div id='optionsContainer3'>
+            <div class='options' answer='1'>Electrons</div>
+            <div class='options' answer='0' onclick="playAudio()">Neutrons</div>
+            <div class='options' answer='0' onclick="playAudio()">Protons</div>
+            <div class='options' answer='0' onclick="playAudio()">Atoms</div>
+          </div>
+          <div id='optionsContainer4'>
+            <div class='options' answer='0' onclick="playAudio()">Equilateral</div>
+            <div class='options' answer='0' onclick="playAudio()">Simultaneous</div>
+            <div class='options' answer='1'>Coherent</div>
+            <div class='options' answer='0' onclick="playAudio()">In motion</div>
+          </div>
+          <div id='optionsContainer5'>
+            <div class='options' answer='0' onclick="playAudio()">Surgery</div>
+            <div class='options' answer='0' onclick="playAudio()">Spectroscopy</div>
+            <div class='options' answer='0' onclick="playAudio()">Nuclear Fusion</div>
+            <div class='options' answer='1'>Baking a cake</div>
+          </div>
+        </div>
+        <button id="nextQuestion">Next Question</button>
+        <div class="button-center">
+          <button id="restartQuizMain" class="quizButtons">Restart Quiz</button>
+          <button id="finishQuizButton" class="quizButtons">Finish</button>
+        </div>
+        <div id="finishModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You have completed the quiz</p>
+              <button id="returnHome" class="quizButtons">Return to Homepage</button>
+              <button id="restartQuiz" class="quizButtons">Restart the Quiz</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+</html>
